@@ -12,6 +12,8 @@
 		DB68B61E200C91B8006ACC04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB68B61C200C91B8006ACC04 /* Main.storyboard */; };
 		DB68B620200C91B8006ACC04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB68B61F200C91B8006ACC04 /* Assets.xcassets */; };
 		DB68B623200C91B8006ACC04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB68B621200C91B8006ACC04 /* LaunchScreen.storyboard */; };
+		DB68B62B200C91E5006ACC04 /* SlideUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB68B62A200C91E5006ACC04 /* SlideUpView.xib */; };
+		DB68B62D200C9313006ACC04 /* SlideUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB68B62C200C9313006ACC04 /* SlideUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		DB68B61F200C91B8006ACC04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB68B622200C91B8006ACC04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB68B624200C91B8006ACC04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB68B62A200C91E5006ACC04 /* SlideUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideUpView.xib; sourceTree = "<group>"; };
+		DB68B62C200C9313006ACC04 /* SlideUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				DB68B61F200C91B8006ACC04 /* Assets.xcassets */,
 				DB68B621200C91B8006ACC04 /* LaunchScreen.storyboard */,
 				DB68B624200C91B8006ACC04 /* Info.plist */,
+				DB68B62A200C91E5006ACC04 /* SlideUpView.xib */,
+				DB68B62C200C9313006ACC04 /* SlideUpView.swift */,
 			);
 			path = PanGuestureSlideUpView;
 			sourceTree = "<group>";
@@ -124,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB68B623200C91B8006ACC04 /* LaunchScreen.storyboard in Resources */,
+				DB68B62B200C91E5006ACC04 /* SlideUpView.xib in Resources */,
 				DB68B620200C91B8006ACC04 /* Assets.xcassets in Resources */,
 				DB68B61E200C91B8006ACC04 /* Main.storyboard in Resources */,
 			);
@@ -136,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB68B62D200C9313006ACC04 /* SlideUpView.swift in Sources */,
 				DB68B61B200C91B8006ACC04 /* ViewController.swift in Sources */,
 				DB68B619200C91B8006ACC04 /* AppDelegate.swift in Sources */,
 			);
