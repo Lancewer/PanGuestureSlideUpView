@@ -10,14 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     var slideUpView:SlideUpView!
-//    var originSlideViewPoint:CGPoint!
     var slideViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var collectionView: UICollectionView!
     
+    let CellID = "Cell"
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        if let slideView = Bundle.main.loadNibNamed("SlideUpView", owner: nil, options: nil)?.first as? SlideUpView{
+        if let slideView = Bundle.main.loadNibNamed("SlideUpView", owner: self, options: nil)?.first as? SlideUpView{
             self.view.addSubview(slideView)
             slideView.translatesAutoresizingMaskIntoConstraints = false
             slideView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: 0.0).isActive = true
@@ -34,6 +35,7 @@ class ViewController: UIViewController {
             slideUpView.isUserInteractionEnabled = true
         }
 
+        collectionView.register(UINib(nibName:"CollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: CellID)
         
     }
 
@@ -75,3 +77,14 @@ class ViewController: UIViewController {
     }
 }
 
+
+extension ViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID, for: indexPath)
+        return cell
+    }
+}
