@@ -16,6 +16,7 @@
 		DB68B62D200C9313006ACC04 /* SlideUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB68B62C200C9313006ACC04 /* SlideUpView.swift */; };
 		DB68B630200D9755006ACC04 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB68B62E200D9755006ACC04 /* CollectionViewCell.swift */; };
 		DB68B631200D9755006ACC04 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB68B62F200D9755006ACC04 /* CollectionViewCell.xib */; };
+		DB68B633200D9DD3006ACC04 /* DynamicHeightViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB68B632200D9DD3006ACC04 /* DynamicHeightViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DB68B62C200C9313006ACC04 /* SlideUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpView.swift; sourceTree = "<group>"; };
 		DB68B62E200D9755006ACC04 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		DB68B62F200D9755006ACC04 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		DB68B632200D9DD3006ACC04 /* DynamicHeightViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				DB68B62C200C9313006ACC04 /* SlideUpView.swift */,
 				DB68B62E200D9755006ACC04 /* CollectionViewCell.swift */,
 				DB68B62F200D9755006ACC04 /* CollectionViewCell.xib */,
+				DB68B632200D9DD3006ACC04 /* DynamicHeightViewViewController.swift */,
 			);
 			path = PanGuestureSlideUpView;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			files = (
 				DB68B62D200C9313006ACC04 /* SlideUpView.swift in Sources */,
 				DB68B61B200C91B8006ACC04 /* ViewController.swift in Sources */,
+				DB68B633200D9DD3006ACC04 /* DynamicHeightViewViewController.swift in Sources */,
 				DB68B630200D9755006ACC04 /* CollectionViewCell.swift in Sources */,
 				DB68B619200C91B8006ACC04 /* AppDelegate.swift in Sources */,
 			);

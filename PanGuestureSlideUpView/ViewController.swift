@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     var slideViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var itemCount = 10
+    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
+    
     let CellID = "Cell"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,7 @@ class ViewController: UIViewController {
             slideView.translatesAutoresizingMaskIntoConstraints = false
             slideView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: 0.0).isActive = true
             slideView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0.0).isActive = true
-            slideView.heightAnchor.constraint(equalToConstant: 1000.0).isActive = true
+            slideView.heightAnchor.constraint(greaterThanOrEqualToConstant: 200).isActive = true
             slideViewTopConstraint = slideView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height - 200.0)
             slideViewTopConstraint.isActive = true
             
@@ -36,7 +39,28 @@ class ViewController: UIViewController {
         }
 
         collectionView.register(UINib(nibName:"CollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: CellID)
-        
+        let initialHeightConst = collectionView.collectionViewLayout.collectionViewContentSize.height
+        print("ViewDidLoad")
+        print("Height get from collectionView: \(collectionView.contentSize.height)")
+        print("Height get from layout: \(initialHeightConst)")
+        collectionViewHeightConstraint = NSLayoutConstraint(item: collectionView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: initialHeightConst)
+        collectionViewHeightConstraint.isActive = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("ViewWillAppear")
+        print("Height get from collectionView: \(collectionView.contentSize.height)")
+                let initialHeightConst = collectionView.collectionViewLayout.collectionViewContentSize.height
+        print("Height get from layout: \(initialHeightConst)")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("ViewDidAppear")
+        print("Height get from collectionView: \(collectionView.contentSize.height)")
+        let initialHeightConst = collectionView.collectionViewLayout.collectionViewContentSize.height
+        print("Height get from layout: \(initialHeightConst)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +73,7 @@ class ViewController: UIViewController {
             let translation = panGesture.translation(in: view)
             //reset pan gesture translation
             panGesture.setTranslation(CGPoint.zero, in: view)
-            print(translation)
+//            print(translation)
             
             var newConstant = slideViewTopConstraint.constant + translation.y
             if newConstant > view.frame.height - 200 {
@@ -75,12 +99,22 @@ class ViewController: UIViewController {
             }
         }
     }
+    @IBAction func addItem(_ sender: Any) {
+        itemCount += 1
+        collectionView.reloadData()
+        resizeCollectionViewHeight()
+    }
+    
+    private func resizeCollectionViewHeight() {
+        print(collectionViewHeightConstraint.priority)
+        collectionViewHeightConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
+    }
 }
 
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return itemCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
